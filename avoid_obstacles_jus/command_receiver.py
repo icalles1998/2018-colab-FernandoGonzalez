@@ -19,8 +19,6 @@ try:
 
     while(not rospy.is_shutdown()):
         data = ser.read()
-        #print(data)
-        #print("----")
         if(data == 'a' or data == 'p'):
             print(data)
             print("----")
