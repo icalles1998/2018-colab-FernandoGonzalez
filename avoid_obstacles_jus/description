@@ -5,5 +5,5 @@ I did it using ROS. If you want to see a picture of the robot, you will find it 
   The operation is as follow: The remote control works with two Arduinos Nano (the emitter and the receiver). The emitter have
 two buttons: one of them is for switch the voice control to manual control, or vice versa. The other one serves to make to go
 forward to the robot or stop it. If the robot is in voice control, it will receive commands by a microphone instaled at the remote 
-control. To conclude, to say that whan the robot is moving, it avoid the obstacles.
+control. To conclude, to say that when the robot is moving, it avoid the obstacles.
 [I will write here the link to the video soon]
