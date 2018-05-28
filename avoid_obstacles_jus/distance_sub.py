@@ -1,4 +1,4 @@
-#Este programa se suscribe al nodo distance para recibir la distancia del sensor
+#Este programa se subscribe al nodo distance para recibir la distancia del sensor
 import rospy
 import maestro as m
 from std_msgs.msg import Int32
@@ -6,12 +6,11 @@ from std_msgs.msg import Int32
 s = m.Controller()
 
 def callback1(data):
-	#rospy.loginfo(rospy.get_caller_id() + " %d received", data.data)
-    #print(data.data)
-    s.setTarget(5, data.data) #ver que falla aqui
+    #rospy.loginfo(rospy.get_caller_id() + " %d received", data.data)
+    s.setTarget(5, data.data)
 
 def callback2(data):
-	#rospy.loginfo(rospy.get_caller_id() + " %d received", data.data)
+    #rospy.loginfo(rospy.get_caller_id() + " %d received", data.data)
     s.setTarget(4, data.data)
 
 if __name__ == '__main__':
