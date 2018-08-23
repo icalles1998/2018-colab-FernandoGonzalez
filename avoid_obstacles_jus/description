@@ -6,4 +6,3 @@ I did it using ROS. If you want to see a picture of the robot, you will find it 
 two buttons: one of them is for switch the voice control to manual control, or vice versa. The other one serves to make to go
 forward to the robot or stop it. If the robot is in voice control, it will receive commands by a microphone instaled at the remote 
 control. To conclude, to say that when the robot is moving, it avoid the obstacles.
-[I will write here the link to the video soon]
