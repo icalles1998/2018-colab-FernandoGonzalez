@@ -11,7 +11,7 @@ try:
         hsv = cv2.cvtColor(imagen, cv2.COLOR_BGR2HSV)
 
          #Establecemos el rango de colores que vamos a detectar
-        #En este caso de verde oscuro a verde-azulado claro
+            
         #rojos_bajos = np.array([170,50,50], dtype=np.uint8)
         #rojos_altos = np.array([180, 255, 255], dtype=np.uint8)
         azules_bajos = np.array([90, 120, 60], dtype=np.uint8)
