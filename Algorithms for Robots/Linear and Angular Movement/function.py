@@ -5,7 +5,7 @@ def move(self, velV, velW):
 		@type velV, velW: enteros de [1 a 5, a mas, se corta en 5]
 		@param velV, velW: velocidades de avance de motores lineal y angular, en m/s y rad/s respectivamente
 		'''
-		# Puertos de datos para servos izquierdo y derecho
+		#Data ports for right and left servos
 		puertoL = 4
 		puertoR = 18
 
@@ -23,7 +23,8 @@ def move(self, velV, velW):
 			if(not esnegativo(vel)):
 
 				if(escero(vel)):
-					self._dit.set_servo_pulsewidth(puertoL, 1510) #parado 1525
+					self._dit.set_servo_pulsewidth(puertoL, 1510) #frecuency maybe needs to be changed
+										      #depending on your servos
 				elif(vel <= 0.0355): #velocidad muy lenta
 					self._dit.set_servo_pulsewidth(puertoL, 1529) #hacia el frente, 1526-1537
 				elif(vel > 0.0355 and vel <= 0.0655):
@@ -75,6 +76,7 @@ def move(self, velV, velW):
 					self._dit.set_servo_pulsewidth(puertoR, 2500)
 
 		#Aqui empieza la algoritmia principal
+		#Here starts the main algorithm
 
 		if(velW != 0):
 			rcir = abs(velV / velW) #Es el radio de la circunferencia que tengo que trazar. En valor absoluto
