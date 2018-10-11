@@ -50,6 +50,15 @@
       
   Let's continue commenting the code. Now, I'm going to skip part of the code so it can be well understood and we are going to look that sentences:
   ```
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup(Encoder, GPIO.IN)
+  
+  ```
+  ``GPIO.setmode(GPIO.BCM)`` serves to configure the way we are going to refer to the Raspberry Pi pins; and ``GPIO.setup(Encoder, GPIO.IN)`` is configuring the pin we named before "Encoder" as input pin. We need to do this to be able to read the signal.
+  
+  Now, let's start with the main algorithm:
+  
+  ```
     angle = initangle()
     p_angle = angle #We define a previous angle 
   ```
