@@ -49,3 +49,8 @@
   * ``turns = 0``
       
   Let's continue commenting the code. Now, I'm going to skip part of the code so it can be well understood and we are going to look that sentences:
+  ```
+  #I calculate the initial angle
+    angle = initangle()
+    p_angle = angle #We define a previous angle 
+  ```
