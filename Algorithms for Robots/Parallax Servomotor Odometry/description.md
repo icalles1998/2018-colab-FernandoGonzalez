@@ -22,3 +22,9 @@
    Duty Cycle = 100% x (tHigh / tCycle). Duty Cycle Min = 2.9%. Duty Cycle Max= 91.7%.
   
 # Code Explanation:
+
+   At first, we need to import two python libraries:
+    
+    #Import libraries:
+    import RPi.GPIO as GPIO
+    import time
