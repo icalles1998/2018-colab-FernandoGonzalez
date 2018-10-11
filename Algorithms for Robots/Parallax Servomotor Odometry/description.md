@@ -34,7 +34,7 @@
    Now there are some parameters I'm going to comment:
    
 ## Constants:
-   * '''DcMin = 29'''
+   * "DcMin = 29"
    * '''DcMax = 971'''
     Pi = 3.1416
     FullCircle = 2 * pi #Total angle of the circle. You can choose de measure (radians or degrees)
