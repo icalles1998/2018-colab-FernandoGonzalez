@@ -36,7 +36,7 @@
     DcMin = 29
     DcMax = 971
     Pi = 3.1416
-    FullCircle = 2 * pi #Total angle of the circle. You can choose de measure (rad or degrees)
+    FullCircle = 2 * pi #Total angle of the circle. You can choose de measure (radians or degrees)
     DutyScale = 1000
     Q2Min = FullCircle / 4 #Minimun angle of second quadrant
     Q3Max = Q2Min * 3 #Minimum angle of fourth quadrant
