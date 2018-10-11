@@ -20,6 +20,7 @@
    
    Duty cycle corresponds to the rotational position of the servo, in the units per full circle desired for your application.
    Duty Cycle = 100% x (tHigh / tCycle). Duty Cycle Min = 2.9%. Duty Cycle Max= 91.7%.
+   The signal will vary in time, so we have to be reading the feedback signal every time.
   
 # Code Explanation:
 
