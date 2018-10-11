@@ -52,7 +52,6 @@
   ```
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(Encoder, GPIO.IN)
-  
   ```
   ``GPIO.setmode(GPIO.BCM)`` serves to configure the way we are going to refer to the Raspberry Pi pins; and ``GPIO.setup(Encoder, GPIO.IN)`` is configuring the pin we named before "Encoder" as input pin. We need to do this to be able to read the signal.
   
