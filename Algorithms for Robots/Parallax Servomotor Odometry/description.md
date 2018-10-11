@@ -43,7 +43,7 @@
     Q3Max = Q2Min * 3 #Minimum angle of fourth quadrant
     Encoder = 24 #feedback pin
 
-    turns = 0 #This parameter will servs us to know the direction of rotation of servo
+    turns = 0 #This parameter will serve us to know the direction of rotation of servo
   We have eight parameters that are considered constants becasue they don't vary. Only be able be changed one of them. Constant "FullCircle" defines the total angle if we considerate the full circle. You can work with radians or with degrees, dependin of you write '2 * Pi' or '360'. So, if you prefer work with degrees, you only have to change '2 * Pi' for '360'.
   
-  We also can see the parameter 'turns'. This parameter will serves to us to know which direction is rotating the servomotor.
+  We also can see the parameter 'turns'. This parameter will serve to us to know which direction is rotating the servomotor.
