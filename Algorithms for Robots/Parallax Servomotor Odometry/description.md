@@ -13,6 +13,6 @@
    
    But we need to know to interpret the information that the signal provides us. How can we do this?
    
-   Within each tCycle iteration, tHigh is the duration in microseconds of a 3.3 V high pulse. The duration of tHigh varies with  the  output  of  a  Hall-effect  sensor  inside  of  the  servo.vThe  duty  cycle  of  this  signal, tHigh / tCycle, ranges from 2.9% at the origin to 91.7% approaching one clockwise revolution.
+   Within each tCycle iteration, tHigh is the duration in microseconds of a 3.3 V high pulse. The duration of tHigh varies with  the  output  of  a  Hall-effect  sensor  inside  of  the  servo. The  duty  cycle  of  this  signal, tHigh / tCycle, ranges from 2.9% at the origin to 91.7% approaching one clockwise revolution.
   
 # Code Explanation:
