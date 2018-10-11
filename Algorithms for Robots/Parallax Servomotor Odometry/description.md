@@ -28,3 +28,4 @@
     #Import libraries:
     import RPi.GPIO as GPIO
     import time
+   The "RPi.GPIO" library allows us to control the GPIO pins of the Raspberry Pi. On the other hand, "time" library is needed but we will see it later. 
