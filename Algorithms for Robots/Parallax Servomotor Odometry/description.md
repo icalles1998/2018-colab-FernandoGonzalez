@@ -28,4 +28,19 @@
     #Import libraries:
     import RPi.GPIO as GPIO
     import time
-   The "RPi.GPIO" library allows us to control the GPIO pins of the Raspberry Pi. On the other hand, "time" library is needed but we will see it later. 
+   The "RPi.GPIO" library allows us to control the GPIO pins of the Raspberry Pi. On the other hand, "time" library is also needed but we will see it later.
+   
+   Now there are some parameters I'm going to comment:
+   
+    #Constants:
+    DcMin = 29
+    DcMax = 971
+    Pi = 3.1416
+    FullCircle = 2 * pi #Total angle of the circle. You can choose de measure (rad or degrees)
+    DutyScale = 1000
+    Q2Min = FullCircle / 4 #Minimun angle of second quadrant
+    Q3Max = Q2Min * 3 #Minimum angle of fourth quadrant
+    Encoder = 24 #feedback pin
+
+    turns = 0 #This parameter will servs us to know the direction of rotation of servo
+  We have eight parameters that are considered constants becasue they don't vary. Only be able be changed one of them. "FullCircle" constant defines the total angle if we considerate the full circle. You can work with radians or with degrees, dependin of you write '2 * Pi' or '360'. So, if you prefer work with degrees, you only have to change '2 * Pi' for '360'.
