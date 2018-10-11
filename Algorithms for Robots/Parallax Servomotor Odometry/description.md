@@ -1,1 +1,2 @@
-# Encabezado 1
+# Introduction:
+  This library is used to measure the odometry of the servomotor "Parallax feedback 360º".
