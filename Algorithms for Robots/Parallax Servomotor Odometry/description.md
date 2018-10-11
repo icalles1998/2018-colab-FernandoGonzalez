@@ -6,6 +6,6 @@
   It is a PWM signal. What means that? PWM means "Pulse Weidth Modulation" and it is a signal of information. 
   How thissignal transport information? Modulatin his pulse weidth. Let's look an example:
   
-  ! (https://github.com/TheRoboticsClub/2018-colab-FernandoGonzalez/blob/master/docs/pwm_signal.png)
+  ! https://github.com/TheRoboticsClub/2018-colab-FernandoGonzalez/blob/master/docs/pwm_signal.png
   
 # Code Explanation:
