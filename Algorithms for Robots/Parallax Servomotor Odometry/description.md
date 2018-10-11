@@ -15,6 +15,7 @@
    
    Within each tCycle iteration, tHigh is the duration in microseconds of a 3.3 V high pulse. The duration of tHigh varies with  the  output  of  a  Hall-effect  sensor  inside  of  the  servo. The  duty  cycle  of  this  signal, tHigh / tCycle, ranges from 2.9% at the origin to 91.7% approaching one clockwise revolution.
    In the next image we can see other example of how the feedback signal is:
+   
    ![can not load the image](https://github.com/TheRoboticsClub/2018-colab-FernandoGonzalez/blob/master/docs/feedback_signal.png)
   
 # Code Explanation:
