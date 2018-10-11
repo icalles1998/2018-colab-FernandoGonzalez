@@ -54,3 +54,14 @@
     p_angle = angle #We define a previous angle 
   ```
   At sentence ``angle  = initangle()`` we are calling to function "initangle" and we are saving in parameter "angle" what it returns and, in the next one, we are assigning his value to p_angle.
+  
+  Well, I think has arrive the moment to explain the function "initangle":
+  ```
+  def initangle():
+    timeHigh = pulse_in(Encoder, 1) #Returns the time in microseconds
+    timeLow = pulse_in(Encoder, 0)
+    timeCycle = timeHigh + timeLow #I calculate the time cycle
+    dutyCycle = (DutyScale * timeHigh) / timeCycle #I calculate the duty cycle
+    return (FullCircle - 1) - ((dutyCycle - DcMin) * FullCircle) / (DcMax - DcMin + 1)
+  
+  ```
