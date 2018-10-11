@@ -17,5 +17,8 @@
    In the next image we can see other example of how the feedback signal is:
    
    ![can not load the image](https://github.com/TheRoboticsClub/2018-colab-FernandoGonzalez/blob/master/docs/feedback_signal.png)
+   
+   Duty cycle corresponds to the rotational position of the servo, in the units per full circle desired for your application.
+   Duty Cycle = 100% x (tHigh / tCycle). Duty Cycle Min = 2.9%. Duty Cycle Max= 91.7%.
   
 # Code Explanation:
