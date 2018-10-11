@@ -53,4 +53,4 @@
     angle = initangle()
     p_angle = angle #We define a previous angle 
   ```
-  At sentence ``angle  = initangle()`` we are calling to function "initangle" and we are saving in parameter "angle" what it returns
+  At sentence ``angle  = initangle()`` we are calling to function "initangle" and we are saving in parameter "angle" what it returns and, in the next one, we are assigning his value to p_angle.
