@@ -83,3 +83,4 @@ At next lines of code, we can observe a loop where in each iteration it is calcu
 if((timeCycle > 1000) and (timeCycle < 1200)):
   finish = True
 ```
+This condition serves to be sure time cycle is in a correct range. If it is like that, we let to calculate the duty cycle.
