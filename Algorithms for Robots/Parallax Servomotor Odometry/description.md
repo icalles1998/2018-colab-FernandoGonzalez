@@ -92,7 +92,7 @@ elif(angle > (FullCircle - 1)):
   angle = FullCircle - 1
 
 ```
-That condition simply serves to keep 'angle' into a range where his minimum value is 0 and his maximum value is 359 (because 360 is considered 0 for the next spin).
+That condition simply serves to keep 'angle' into a range where his minimum value is 0 and his maximum value is 359 (or (2*Pi) - 1) because 360 (or 2*Pi) is considered 0 for the next spin.
 It is more interesting to analize the next lines:
 ```
 if((angle < Q2Min) and (p_angle > Q3Max)):
@@ -108,3 +108,4 @@ elif(turns <  0):
   angle = ((turns + 1) * FullCircle) - (FullCircle - angle)
 
 ```
+we are reaching the end of the program. It is important that when a full turn would has been completed, angle goes back to be zero. In this way, 'angle' would goes between 0 and 360 degrees or 0 and 2* Pi radians. 
