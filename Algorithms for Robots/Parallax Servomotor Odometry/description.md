@@ -117,4 +117,4 @@ elif(angle <= -FullCircle):
   angle = angle + FullCircle
   turns = 0
 ```
-To conclude, the function returns the 'angle' value and before to make another iteration of the loop, the current angle will have to be the previous angle. We do this with sentence ``p_angle = angle``
+To conclude, the function returns the 'angle' value and before to make another iteration of the loop, the current angle will have to be the previous angle. We do this with the sentence ``p_angle = angle``
