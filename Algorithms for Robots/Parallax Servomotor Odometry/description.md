@@ -79,7 +79,7 @@ Finally, we calculate the angle with the next formula:
 ```(FullCircle - 1) - ((dutyCycle - DcMin) * FullCircle) / (DcMax - DcMin + 1)```
 But, maybe yo are asking yourself why we have to calculate an init angle. on the rest of the code, we are calculating the angle in that the servomotor is comparing this one with the angle calculates previously. It's for that we need an init angle.
 At next lines of code, we can observe a loop where in each iteration it is calculated a new angle of the same way than before except this two lines:
-``
+```
 if((timeCycle > 1000) and (timeCycle < 1200)):
   finish = True
 ```
