@@ -84,3 +84,19 @@ if((timeCycle > 1000) and (timeCycle < 1200)):
   finish = True
 ```
 This condition serves to be sure time cycle is in a correct range. If it is like that, we let to calculate the duty cycle.
+Later to calculate the new angle we can see a new condition:
+```
+if(angle < 0):
+  angle = 0
+elif(angle > (FullCircle - 1)):
+  angle = FullCircle - 1
+
+```
+That condition simply serves to keep 'angle' into a range where his minimum value is 0 and his maximum value is 359 (because 360 is considered 0 for the next spin).
+It is more interesting to analize the next lines:
+```
+if((angle < Q2Min) and (p_angle > Q3Max)):
+  turns = turns + 1
+elif((p_angle < Q2Min) and (angle > Q3Max)):
+  turns = turns - 1
+```
