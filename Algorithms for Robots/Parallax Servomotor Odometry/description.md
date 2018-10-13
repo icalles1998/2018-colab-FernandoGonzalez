@@ -100,4 +100,4 @@ if((angle < Q2Min) and (p_angle > Q3Max)):
 elif((p_angle < Q2Min) and (angle > Q3Max)):
   turns = turns - 1
 ```
-if servomotor turns in the clockwise, 'turns' increase, but if servomotor turns in the anticlockwise, then, turns decreases
+if servomotor turns in the anticlockwise, parameter 'turns' increase, but if servomotor turns in the clockwise, then, parameter 'turns' decreases. This wil serves to construct the angle measurement from the turns count and current angle value.
