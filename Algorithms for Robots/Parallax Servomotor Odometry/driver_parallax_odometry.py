@@ -106,13 +106,13 @@ try:
     	elif(angle <= -FullCircle):
     	    angle = angle + FullCircle
     	    turns = 0
-    #Uncomment to print the angle:
+    	#Uncomment to print the angle:
 	#print(angle)
 
-    #uncomment to return the angle
-    #return angle
+    	#uncomment to return the angle
+    	#return angle
 	p_angle = angle
-    time.sleep(0.001)
+    	time.sleep(0.001)
 
 except KeyboardInterrupt:
 	pass
