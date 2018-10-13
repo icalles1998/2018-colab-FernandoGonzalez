@@ -74,6 +74,12 @@
   ```
   At first, we save  in the parameters 'timeHigh' with sentence ``timeHigh = pulse_in(Encoder, 1)`` and 'timeLow' with sentence ``timeLow = pulse_in(Encoder, 0)`` the time that signal is on High and Low. The Raspberry GPIO pins are digital, so, when signal is High, it is being receiving ones, and when signal is Low, it is being receiving zeros. the time signal is High or Low can be knows by the function 'pulse_in'. That function receive like paremeter, the Raspberry pin where it is being reading and, the bit wich represents the signal value we can measure (High = 1 and Low = 0). So, We are going to see how the function 'pulse_in' is.
 At sentence ``dutyCycle = (DutyScale * timeHigh) / timeCycle`` we are calculating the duty cycle as quotient of 'timeHIGH' and 'timeCycle'. It is being multiplicated by 'DutyScale'. We have to remember 'DutyScale' is the signal period. 
-Finally, we calculate the angle and with the next formula: 
+Finally, we calculate the angle with the next formula: 
 
 ```(FullCircle - 1) - ((dutyCycle - DcMin) * FullCircle) / (DcMax - DcMin + 1)```
+But, maybe yo are asking yourself why we have to calculate an init angle. on the rest of the code, we are calculating the angle in that the servomotor is comparing this one with the angle calculates previously. It's for that we need an init angle.
+At next lines of code, we can observe a loop where in each iteration it is calculated a new angle of the same way than before except this two lines:
+``
+if((timeCycle > 1000) and (timeCycle < 1200)):
+  finish = True
+```
