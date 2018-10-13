@@ -108,4 +108,12 @@ elif(turns <  0):
   angle = ((turns + 1) * FullCircle) - (FullCircle - angle)
 
 ```
-we are reaching the end of the program. It is important that when a full turn would has been completed, angle goes back to be zero. In this way, 'angle' would goes between 0 and 360 degrees or 0 and 2* Pi radians. 
+we are reaching the end of the program. It is important that when a full turn would has been completed, angle goes back to be zero. In this way, 'angle' would goes between 0 and 360 degrees or between 0 and 2 * Pi radians. This is done in the following way:
+```
+if(angle >= FullCircle):
+  angle = angle - FullCircle
+  turns = 0
+elif(angle <= -FullCircle):
+  angle = angle + FullCircle
+  turns = 0
+```
