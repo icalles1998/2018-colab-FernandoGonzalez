@@ -47,6 +47,7 @@
   We also can see the parameter 'turns'. This parameter will serve to us to know which direction is rotating the servomotor.
   * ``turns = 0``
       
+  ## Body of the Code:
   Let's continue commenting the code. Now, I'm going to skip part of the code so it can be well understood and we are going to look that sentences:
   ```
   GPIO.setmode(GPIO.BCM)
