@@ -1,5 +1,6 @@
 '''
 Author: Fernando González Ramos
+Mail: fergonzaramos@yahoo.es
 '''
 
 #! /usr/bin/env python
