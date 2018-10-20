@@ -1,3 +1,7 @@
+'''
+Author: Fernando González Ramos
+'''
+
 #! /usr/bin/env python
 #Import libraries:
 import RPi.GPIO as GPIO
