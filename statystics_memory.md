@@ -11,3 +11,4 @@ Posteriormente, procedemos a leer cada una de las columnas de dicho fichero. Est
 * ``xlRange = 'C1:C30710';`` Para la tercera columna.
 * ``xlRange = 'D1:D30710';`` Para la cuarta columna.
 * ``xlRange = 'E1:E30710';`` Para la quinta columna.
+La sentencia utilizada para leer el rango de celdas es ``xlsread(file, xlRange);``.
