@@ -32,7 +32,7 @@ end
 ```
 ## Procedimiento Principal
 El procedimiento principal consta de un bucle que en cada vuelta muestra un menú con las diferentes opciones a elegir por el usuario y que finaliza con la elección por parte de éste de la opción "Salir del Programa".
-Para imprimir el menú se hace uso de la función **mostrar_menu**, a la cual se llama de la siguiente manera: ``mostrar_menu();`` y cuya implementación es la siguiente:
+Para imprimir el menú se hace uso de la función **mostrar_menu_pcpal**, a la cual se llama de la siguiente manera: ``mostrar_menu_pcpal();`` y cuya implementación es la siguiente:
 ```
 function [] = mostrar_menu();
     disp("Teclee la opción deseada:");
