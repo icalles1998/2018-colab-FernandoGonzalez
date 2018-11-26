@@ -22,7 +22,7 @@ function [num] = segundos_tiempo(num);
     end
 end
 ```
-Algo parecido ocurre con la columna "Ritmo", con la salvedad de que el formato de esta columna en excel es "mm:ss", por lo que el procedimiento para pasarlo a segundos difiere al anterior tanto en cuanto a que ha de ser dividido por 60. Esto se debe a que Matlab siempre lee este tipo de datos con el formato "hh:mm:ss", pero en este caso, lo que Matlab interpreta como horas son minutos. Como he mencionado, la manera de solucionar esto es igual que la anterior pero dividiendo además por 60, tal como se muestra a continuación. esta función recibe el nombre de **segundos_ritmo**.
+Algo parecido ocurre con la columna "Ritmo", con la salvedad de que el formato de esta columna en excel es "mm:ss", por lo que el procedimiento para pasarlo a segundos difiere al anterior tanto en cuanto a que ha de ser dividido por 60. Esto se debe a que Matlab siempre lee este tipo de datos con el formato "hh:mm:ss", pero en este caso, lo que Matlab interpreta como horas son minutos. Como he mencionado, la manera de solucionar esto es igual que la anterior pero dividiendo además por 60, tal como se muestra a continuación. Esta función recibe el nombre de **segundos_ritmo**.
 ```
 function [num] = segundos_tiempo(num);
     for i = 1:30709
@@ -30,4 +30,18 @@ function [num] = segundos_tiempo(num);
     end
 end
 ```
-
+## Procedimiento Principal
+El procedimiento principal consta de un bucle que en cada vuelta muestra un menú con las diferentes opciones a elegir por el usuario y que finaliza con la elección por parte de éste de la opción "Salir del Programa".
+Para imprimir el menú se hace uso de la función **mostrar_menu**, a la cual se llama de la siguiente manera: ``mostrar_menu();`` y cuya implementación es la siguiente:
+```
+function [] = mostrar_menu();
+    disp("Teclee la opción deseada:");
+    salto_linea()
+    disp("1) Histograma");
+    disp("2) Datos Numéricos");
+    disp("3) Distribución Gaussiana");
+    disp("4) Cálculo de Probabilidades");
+    disp("5) Cálculo de Cuartiles");
+    disp("6) Salir del Programa");
+end
+```
