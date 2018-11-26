@@ -45,3 +45,10 @@ function [] = mostrar_menu();
     disp("6) Salir del Programa");
 end
 ```
+La función **salto_linea()** es la siguiente:
+```
+function [] = salto_linea();
+    disp(" ");
+end
+```
+Esta función inserta una linea en blanco.
