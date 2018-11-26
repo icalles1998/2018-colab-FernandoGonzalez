@@ -13,3 +13,12 @@ Posteriormente, procedemos a leer cada una de las columnas de dicho fichero. Est
 * ``xlRange = 'E1:E30710';`` Para la quinta columna.
 
 La sentencia utilizada para leer el rango de celdas es ``xlsread(file, xlRange);``.
+
+**Nota:** Con respecto a la importación de las horas, decir que matlab las guarda en formato de días. Es decir, para Matlab 12:00:00 (hh:mm:ss) se corresponde con 0.5 (días). Es por esto que para el caso de la columna "Tiempo" hemos hecho uso de una función a la que hemos llamado **segundos_tiempo** la cual devuelve el tiempo en segundos al que corresponde el valor en días recogido por Matlab. La especificación de la función es la siguiente:
+```
+function [num] = segundos_tiempo(num);
+    for i = 1:30709
+        num(i) = num(i) * 86400;
+    end
+end
+```
