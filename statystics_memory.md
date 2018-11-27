@@ -52,3 +52,10 @@ function [] = salto_linea();
 end
 ```
 Esta función inserta una linea en blanco.
+
+Posteriormente, con la sentencia ``n = leernum();`` se lee desde teclado el número correspondiente a la elección del usuario. La función **leernum()** se especifica a continuación:
+```
+function [n] = leernum();
+    n = input('Introduzca un numero: ');
+end
+```
