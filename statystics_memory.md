@@ -82,4 +82,4 @@ En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa.
 ``disp("Teclee un número del 1 al 6");``.
 Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente idicados.
 ### procedimiento_1:
-* Especificación del código:
+* **Especificación del código:**
