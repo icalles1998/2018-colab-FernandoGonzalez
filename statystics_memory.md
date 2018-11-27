@@ -77,3 +77,4 @@ Una vez leído el número introducido por el usuario, el programa entra en una c
         disp("Teclee un número del 1 al 6");    
     end
 ```
+En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa. La asignación del valor booleano 'true' a la variable 'finish' significaría la salida del bucle y, por tanto, el fin de la ejecución del programa. En lo que al caso por defecto se refiere, decir que se imprime un mensaje de error indicando el correcto uso del programa con la sentencia ``disp("Teclee un número del 1 al 6");``.
