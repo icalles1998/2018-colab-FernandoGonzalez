@@ -84,8 +84,6 @@ Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "
 ### procedimiento_1:
 * **Especificación del código:**
 ```
-%Imprimimos el primer submenu para la eleccion de la accion a
-%realizar en bucle hasta que la accion elegida sea correcta
 ok = false;
 while ~ok
     impr_submenu1();
@@ -96,8 +94,6 @@ while ~ok
         salto_linea();
     end
 end
-%Imprimimos el segundo submenu para la eleccion de la accion a
-%realizar en bucle hasta que la accion elegida sea correcta
 ok = false;
 while ~ok
     impr_submenu11();
