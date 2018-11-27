@@ -83,3 +83,30 @@ En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa.
 Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente idicados.
 ### procedimiento_1:
 * **Especificación del código:**
+```
+%Imprimimos el primer submenu para la eleccion de la accion a
+        %realizar en bucle hasta que la accion elegida sea correcta
+        ok = false;
+        while ~ok
+            impr_submenu1();
+            [accion, ok] = leeraccion1();
+            salto_linea();
+            if ~ok
+                disp("Numero introducido Incorrecto");
+                salto_linea();
+            end
+        end
+        %Imprimimos el segundo submenu para la eleccion de la accion a
+        %realizar en bucle hasta que la accion elegida sea correcta
+        ok = false;
+        while ~ok
+            impr_submenu11();
+            [cat_elegida, ok] = leercategoria(categoria);
+            salto_linea();
+            if ~ok
+                disp("Categoria introducida Incorrecta");
+                salto_linea();
+            end
+        end
+        impr_operacion1(cat_elegida, accion, categoria, tiempo);
+```
