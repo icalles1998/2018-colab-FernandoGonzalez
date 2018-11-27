@@ -61,53 +61,19 @@ end
 ```
 Una vez leído el número introducido por el usuario, el programa entra en una casuística encargada de decidir qué hacer en función de dicho número. A continuación separaré esta casuística por "procedimientos" con el fín del buen entendimiento del código que a partir de este momento se explica:
 ```
-if n == 1
-        **procedimiento1**
+    if n == 1
+        procedimiento_1;
     elseif n == 2
-        %Imprimimos el primer submenu para la eleccion de la accion a
-        %realizar en bucle hasta que la accion elegida sea correcta
-        ok = false;
-        while ~ok
-            impr_submenu1();
-            [accion, ok] = leeraccion1();
-            salto_linea();
-            if ~ok
-                disp("Numero introducido Incorrecto");
-                salto_linea();
-            end
-        end
-        %Imprimimos el segundo submenu para la eleccion de la accion a
-        %realizar en bucle hasta que la accion elegida sea correcta
-        ok = false;
-        while ~ok
-            impr_submenu11();
-            [cat_elegida, ok] = leercategoria(categoria);
-            salto_linea();
-            if ~ok
-                disp("Categoria introducida Incorrecta");
-                salto_linea();
-            end
-        end
-        impr_operacion1(cat_elegida, accion, categoria, tiempo);
+        procedimiento_2;
     elseif n == 3
-        impr_gaussiana(tiempo);
+        procedimiento_3;
     elseif n == 4
-        ok = false;
-        while ~ok
-            impr_submenu2(); %Imprimo el submenu
-            [accion, ok] = leeraccion2(); %Leo la accion y compruebo si es correcta
-            salto_linea();
-            if ~ok
-                disp("Numero introducido Incorrecto");
-                salto_linea();
-            end
-        end
-        impr_operacion2(accion, tiempo);
+        procedimiento_4;
     elseif n == 5
-        disp("Estoy en el quinto caso");
+        procedimiento_5;
     elseif n == 6
         finish = true;
     else
-        disp("Teclee un número del 1 al 6, TERCUZO!");    
+        disp("Teclee un número del 1 al 6");    
     end
 ```
