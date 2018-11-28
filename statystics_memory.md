@@ -107,7 +107,7 @@ end
 impr_operacion1(cat_elegida, accion, categoria, tiempo);
 ```
 #### Explicación del Código:
-En primer lugar, observamos que consta de dos bucles "while". En primer lugar me centraré en el primero:
+En primer lugar, observamos que consta de dos bucles "while". En este caso me centraré en el primero:
 ```
 ok = false;
 while ~ok
