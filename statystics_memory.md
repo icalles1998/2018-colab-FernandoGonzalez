@@ -1,4 +1,4 @@
-# Memomia de la Práctica
+# Memoria de la Práctica
 ## Importación de datos:
 En primer lugar, declaramos el nombre del fichero que vamos a leer (fichero excel) de la siguiente manera: 
 
@@ -140,3 +140,8 @@ function [a, ok] = leeraccion1();
     end
 end
 ```
+Como vemos, se lee un número de teclado y se almacena en "a". Posteiormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
+* ```if ~ok
+        disp("Numero introducido Incorrecto");
+        salto_linea();
+    end```
