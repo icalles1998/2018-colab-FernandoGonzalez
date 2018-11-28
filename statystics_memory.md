@@ -585,3 +585,16 @@ function [] = impr_seg_cuartil(t);
     disp(impr);
 end
 ```
+##### impr_tercer_cuartil:
+Se comporta exactamente igual que **impr_primer_cuartil** con la salvedad de que el valor de "K" es 0.75, por lo que su código queda de la siguiente manera:
+```
+function [] = impr_tercer_cuartil(t);
+    K = 0.75; %Defino la medida de posicion que busca el tercer cuartil
+    [nelems, cols] = size(t); %Guardo en 'nelems' el numero de elementos del array 't'
+    pos = nelems * K; % Definimos la posicion en la que se encuentra nuestro cuartil.
+    arr = sort(t); %Ordeno el array 't' y lo guardo en 'arr'
+    cuart = tiempoenhoras(percentil(pos, arr)); %calculo el cuartil y lo guardo en 'cuart'
+    impr = ['Tercer Cuartil: ', cuart]; %Imprimo el cuartil
+    disp(impr);
+end
+```
