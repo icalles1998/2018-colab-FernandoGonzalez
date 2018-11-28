@@ -82,7 +82,7 @@ En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa.
 ``disp("Teclee un número del 1 al 6");``.
 Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente idicados.
 ### procedimiento_1:
-* **Especificación del código:**
+#### Especificación del código:
 ```
 ok = false;
 while ~ok
@@ -106,7 +106,7 @@ while ~ok
 end
 impr_operacion1(cat_elegida, accion, categoria, tiempo);
 ```
-* **Explicación del Código:**
+#### Explicación del Código:
 En primer lugar, observamos que consta de dos bucles "while". En primer lugar me centraré en el primero:
 ```
 ok = false;
@@ -120,7 +120,8 @@ while ~ok
     end
 end
 ```
-Para comenzar, se declara un booleano que comienza inicializado a "false" y que servirá como condición de salida del bucle. Lo siguiente que se ejecuta una vez dentro del bucle es el procedimiento **impr_submenu1()**, el cual se encarga de imprimir un nuevo menú que indica al usuario su siguiente acción a realizar. Consta del siguiente código:
+* ``ok = false;``: Para comenzar, se declara un booleano que comienza inicializado a "false" y que servirá como condición de salida del bucle. 
+* ``impr_submenu1();``: Lo siguiente que se ejecuta una vez dentro del bucle es el procedimiento **impr_submenu1()**, el cual se encarga de imprimir un nuevo menú que indica al usuario su siguiente acción a realizar. Consta del siguiente código:
 ```
 function [] = impr_submenu11();
     disp("Elija Una categoría:");
