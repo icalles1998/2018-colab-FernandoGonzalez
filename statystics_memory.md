@@ -95,7 +95,7 @@ function [] = hacer_histograma(t);
 end
 ```
 #### Explicación del Código:
-con la sentencia ``nbins = 20;`` se define el número el número de intervalos de tiempo a representar, los cuales se corresponden con cada una de las barras que se verán representadas, y se guarda en la vaiable "nbins". Posteriormente, se representa el histograma haciendo uso del procedimiento **hist** que Matlab nos proporciona.
+con la sentencia ``nbins = 20;`` se define el número de intervalos de tiempo a representar, los cuales se corresponden con cada una de las barras que se verán representadas, y se guarda en la vaiable "nbins". Posteriormente, se representa el histograma haciendo uso del procedimiento **hist** que Matlab nos proporciona.
 #### Ejemplo Salida:
 
 ### procedimiento_2:
