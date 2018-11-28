@@ -357,8 +357,19 @@ function [] = impr_prob_debajo(t);
     disp(impr);
 end
 ```
-1. Se guarda el tiempo menor del array de tiempos 't'
-2. se lee el tiempo introducido por el usuario haciendo uno de la funcion **leertiempo** cuyo código es el siguiente:
+**1.** Se guarda el tiempo menor del array de tiempos 't' haciendo uso de la función **tiempomenor** suyo código es el siguiente:
+```
+function [n] = tiempomenor(t);
+    n = t(1);
+    [filas, columnas] = size(t);
+    for i = 2:filas
+       if t(i) < n
+           n = t(i);
+       end
+    end
+end
+```
+**2.** se lee el tiempo introducido por el usuario haciendo uno de la funcion **leertiempo** cuyo código es el siguiente:
 ```
 function [c] = leertiempo();
     c = input('Introduzca tiempo en formato hh:mm:ss: ', 's');
