@@ -141,7 +141,12 @@ function [a, ok] = leeraccion1();
 end
 ```
 Como vemos, se lee un número de teclado y se almacena en "a". Posteiormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
-* ```if ~ok
-        disp("Numero introducido Incorrecto");
-        salto_linea();
-    end```
+
+Continuando con el código de **procedimiento_1**, si el número introducido por el usuario es incorrecto (en cuyo caso, "ok" almacenará el valor 'false'), se imprime un mensaje de error de la siguiente manera:
+```
+if ~ok
+    disp("Numero introducido Incorrecto");
+    salto_linea();
+end
+```
+Decir que **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que el número leído de teclado sea correcto.
