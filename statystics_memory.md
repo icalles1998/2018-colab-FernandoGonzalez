@@ -82,7 +82,24 @@ En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa.
 ``disp("Teclee un número del 1 al 6");``.
 Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente idicados.
 ### procedimiento_1:
-#### Especificación del código:
+#### Especificación del Código:
+**procedimiento_1** consta de un procedimiento llamado ``hacer_histograma(tiempo)``, el cual imprime por pantalla un histograma teniendo en cuenta todos los tiempos leídos en el fichero excel. A continuación se muestra el código de este procedimiento:
+```
+function [] = hacer_histograma(t);
+    disp("Generando Histograma...");
+    salto_linea();
+    nbins = 20; %Primero defino el numero de bins
+    figure
+    hist(t, nbins); %Representar el histograma
+    title('Histograma de tiempos');
+end
+```
+#### Explicación del Código:
+con la sentencia ``nbins = 20;`` se define el número el número de intervalos de tiempo a representar, los cuales se corresponden con cada una de las barras que se verán representadas, y se guarda en la vaiable "nbins". Posteriormente, se representa el histograma haciendo uso del procedimiento **hist** que Matlab nos proporciona.
+#### Ejemplo Salida:
+
+### procedimiento_2:
+#### Especificación del Código:
 ```
 ok = false;
 while ~ok
@@ -140,7 +157,7 @@ function [a, ok] = leeraccion1();
     end
 end
 ```
-Como vemos, se lee un número de teclado y se almacena en "a". Posteiormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
+Como vemos, se lee un número de teclado y se almacena en "a". Posteriormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
 
 Continuando con el código de **procedimiento_1**, si el número introducido por el usuario es incorrecto (en cuyo caso, "ok" almacenará el valor 'false'), se imprime un mensaje de error de la siguiente manera:
 ```
