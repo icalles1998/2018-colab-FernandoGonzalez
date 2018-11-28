@@ -560,9 +560,13 @@ function [] = impr_primer_cuartil(t);
 end
 ```
 **1.** En "K" se almacena la medida de posicion del primer cuartil.
+
 **2.** Se guarda en "nelems" el número de elementos del array 't'.
+
 **3.** Se define la posición en la que se encuentra el cuartil.
+
 **4.** Se ordena el array 't' de manera ascendente y se guarda en 'arr'.
+
 **5.** Se calcula el cuartil en formato hh:mm:ss con la función *tiempoenhoras* haciendo uso de la función **percentil**, la cual se compone del siguiente código:
 ```
 function [n] = percentil(pos, arr);
@@ -596,5 +600,37 @@ function [] = impr_tercer_cuartil(t);
     cuart = tiempoenhoras(percentil(pos, arr));
     impr = ['Tercer Cuartil: ', cuart];
     disp(impr);
+end
+```
+* **impr_percentil:** Imprime el percentil que el usuario desee. el código es el siguiente:
+```
+function [] = impr_percentil(t);
+    ok = false;
+    while ~ok
+        [npercent, ok] = numpercentil();
+        salto_linea();
+        if ~ok
+            disp('Numero de percentil introducido incorrecto');
+        end
+    end
+    K = npercent / 100; %Defino la medida de posicion del percentil
+    [nelems, cols] = size(t); %Guardo en 'nelems' el numero de elementos del array 't'
+    pos = nelems * K; % Definimos la posicion en la que se encuentra nuestro percentil.
+    arr = sort(t); %Ordeno el array 't' y lo guardo en 'arr'
+    perc = tiempoenhoras(percentil(pos, arr)); %calculo el percentil y lo guardo en 'perc'
+    impr = ['Percentil ', num2str(npercent), ': ', perc]; %Imprimo el percentil
+    disp(impr);
+    salto_linea();
+end
+```
+Como puede observarse, el código se compone de un bucle while que itera tantas veces como sea necesario hasta que el usuario introduzca un número correcto (esto se evalúa con la función *numpercentil()*) y después, una serie de sentencias que son idénticas a la función **impr_primer_cuartil** o **impr_tercer_cuartil** previamente explicadas. Por tanto, la única novedad es que el parámetro "K" depende del número de percentil "npercent" leída de teclado mediante la sentencia ``[npercent, ok] = numpercentil();``. A continuación se muestra el código de la función *numpercentil*:
+```
+function [n, ok] = numpercentil();
+    n = input('Introduzca el número de percentil que desea: ');
+    if n >= 1 & n <= 99
+        ok = true;
+    else
+        ok = false;
+    end
 end
 ```
