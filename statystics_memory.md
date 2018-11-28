@@ -276,3 +276,28 @@ end
 ```
 #### Explicación del Código:
 Se define el número de intervalos en los que vamos a agrupar los tiempos guardados en el array 't' que recibe como parámetro este procedimiento y se guarda en 'nbins'. Posteriormente se imprime por pantalla el histograma con la gaussiana superpuesta haciendo uso de la función ``histfit(t, nbins);`` que nos proporciona Matlab.
+### procedimiento_4:
+#### Especificación del Código:
+```
+ok = false;
+while ~ok
+    impr_submenu2();
+    [accion, ok] = leeraccion2();
+    salto_linea();
+    if ~ok
+        disp("Numero introducido Incorrecto");
+        salto_linea();
+    end
+end
+impr_operacion2(accion, tiempo);
+```
+El comportamiento del bucle while es muy similar al del "procedimiento_2" salvo por tres sentencias que se explican a continuación:
+* ``impr_submenu2();`` Imprime un nuevo submenú. Su código es el siguiente:
+```
+function [] = impr_submenu2();
+    disp("1) Probabilidad por debajo de un tiempo");
+    disp("2) Probabilidad por encima de un tiempo");
+    disp("3) Probabilidad entre dos tiempos");
+end
+```
+* ``[accion, ok] = leeraccion2();`` Se encarga de leer el número introducido por el usuario, que se corresponde con la acción que éste quiere que se realice, y evalar si es correcta. El valor del número se guarda en "accion" y el booleano que indica si es correcto se guarda en "ok"
