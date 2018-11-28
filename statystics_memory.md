@@ -424,6 +424,8 @@ impr = ['Probabilidad: ', num2str(prob)];
 disp(impr);
 ```
 ##### impr_prob_encima:
+Imprime la probabilidad de conseguir un tiempo mayor al introducido por el usuario.
+
 Únicamente se diferencia con la anterior en la sentencia ``tmax = tiempomayor(t);``, mediante la que se guarda el tiempo mayor; y en la sentencia ``prob = normcdf(tmax, media, desv) - normcdf(ti, media, desv);``.
 El código de la función **tiempomayor** es el mostrado a continuación:
  ```
@@ -438,3 +440,51 @@ El código de la función **tiempomayor** es el mostrado a continuación:
 end
  ```
  ##### impr_prob_entre:
+ Imprime la probabilidad de conseguir un tiempo contenido entre dos tiempos introducidos por el usuario.
+ 
+ La especificación del código de este procedimiento es el siguiente:
+```
+function [] = impr_prob_entre(t);
+    
+    ti1 = leertiempo();
+    ti2 = leertiempo();
+    
+    [Y, M, D, H, MN, S] = datevec(ti1);
+    ti1 = H*3600+MN*60+S;
+    
+    [Y, M, D, H, MN, S] = datevec(ti2);
+    ti2 = H*3600+MN*60+S;
+    
+    media = mean(t);
+    desv = std(t);
+    
+     tmenor = tiempomenor(t);
+     tmayor = tiempomayor(t);
+    
+    if ti1 >= ti2
+        if ti1 > tmayor | ti2 < tmenor
+            prob = 0;
+        else
+            prob = normcdf(ti1, media, desv) - normcdf(ti2, media, desv);
+        end
+    else
+        if ti1 < tmenor | ti2 > tmayor
+            prob = 0;
+        else
+            prob = normcdf(ti2, media, desv) - normcdf(ti1, media, desv);
+        end
+    end
+    if prob <= 0
+        prob = 0;
+    end
+   
+    salto_linea();
+    impr = ['Probabilidad: ', num2str(prob)];
+    disp(impr);
+end
+```
+La principal diferencia con respecto a las dos anteriores es que en este caso se leen de teclado dos tiempos, lo cual se lleva a cabo con las sentencias:
+```
+ti1 = leertiempo();
+ti2 = leertiempo();
+```
