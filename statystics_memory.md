@@ -88,9 +88,9 @@ Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "
 function [] = hacer_histograma(t);
     disp("Generando Histograma...");
     salto_linea();
-    nbins = 20; %Primero defino el numero de bins
+    nbins = 20;
     figure
-    hist(t, nbins); %Representar el histograma
+    hist(t, nbins);
     title('Histograma de tiempos');
 end
 ```
@@ -270,7 +270,7 @@ Finalmente, con la sentencia ``disp(media);`` se imprime el valor de la media ca
 
 La función **tiempoenhoras(n)** se encarga de pasar un tiempo en segundos (que es el argumento 'n') a formato hh:mm:ss y lo devuelve como string. La implementación de esta función es la siguiente:
 ```
-function [s] = tiempoenhoras(n); %Recibe tiempo en segundos y devuelve tiempo en formato hh:mm:ss
+function [s] = tiempoenhoras(n);
     finish = false;
     segs = 0;
     mins = 0;
@@ -411,3 +411,4 @@ ti = H*3600+MN*60+S;
 media = mean(t);
 desv = std(t);
 ```
+**5.** Calculamos la probabilidad deseada con la sentencia ``prob = normcdf(ti, media, desv) - normcdf(tmin, media, desv);`` haciendo uso de la función *normcdf* que Matlab proporciona.
