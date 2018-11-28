@@ -395,7 +395,7 @@ function [n] = tiempomenor(t);
     end
 end
 ```
-**2.** Se lee el tiempo introducido por el usuario haciendo uno de la funcion **leertiempo** cuyo código es el siguiente:
+**2.** Se lee el tiempo introducido por el usuario en formato hh:mm:ss haciendo uno de la función **leertiempo** cuyo código es el siguiente:
 ```
 function [c] = leertiempo();
     c = input('Introduzca tiempo en formato hh:mm:ss: ', 's');
@@ -488,3 +488,53 @@ La principal diferencia con respecto a las dos anteriores es que en este caso se
 ti1 = leertiempo();
 ti2 = leertiempo();
 ```
+### procedimiento_5:
+#### Especificación del Código:
+```
+ok = false;
+while ~ok
+    impr_submenu3();
+    [accion, ok] = leeraccion3();
+    salto_linea();
+    if ~ok
+        disp("Numero introducido Incorrecto");
+        salto_linea();
+    end
+end
+impr_operacion3(accion, tiempo);
+```
+#### Explicación del Código
+El comportamiento de este bloque de código es idéntico a lo mencionado en casos anteriores salvando las llamadas a  **impr_submenu3** **leeraccion3** y **impr_operacion3**. Procedo a mostrar el código de estos tres procedimientos:
+##### impr_submenu3:
+```
+function [] = impr_submenu3();
+    disp("Elija una de las siguientes opciones:");
+    salto_linea();
+    disp("1) Cálculo de Cuartiles");
+    disp("2) Cálculo de Percentiles");
+    salto_linea();
+end
+```
+##### leeraccion3:
+```
+function [a, ok] = leeraccion3();
+    a = leernum();
+    if a == 1 | a == 2
+        ok = true;
+    else
+        ok = false;
+    end
+end
+```
+##### impr_operacion3:
+```
+function [] = impr_operacion3(a, t);
+    if a == 1
+        impr_cuartiles(t);
+    else
+        impr_percentil(t);
+    end
+end
+```
+Este procedimiento ejecuta a su vez los procedimientos **impr_cuartiles** o **impr_percentil** en función de la acción elegida por el usuario.
+* **impr_cuartiles:** Imprimes los tres cuartiles. Se compone del siguiente código que a su vez hace las llamadas a **impr_primer_cuartil**, **impr_seg_cuartil** e **impr_tercer_cuartil**.
