@@ -152,3 +152,22 @@ end
 Decir que **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que el número leído de teclado sea correcto.
 
 En cuanto al segundo bucle del que consta **procedimiento_1**, decir que es idéntico al ya mencionado salvo por la sentencia ``[cat_elegida, ok] = leercategoria(categoria);``.
+Con esta sentencia se llama a la función **leercategoria(categoria)** la cual recibe como parámetro el array "categoria" y devuelve dos valores que se almacenan en "cat_elegida" y "ok" respectivamente. Su implementación es la siguiente:
+```
+function [c, ok] = leercategoria(cat);
+    c = input('Introduzca una categoria de las siguientes: ', 's');
+    [filas, columnas] = size(cat); %Me quedo con las filas que contiene el array
+    i = 1;
+    ok = false;
+    %Compruebo si existe la categoria introducida
+    while i <= filas & ~ok
+        if strcmp(cat(i), c) %comparo ambos strings
+            ok = true;
+        end
+        i = i + 1;
+    end
+    if strcmp(c, "Todas")
+        ok = true;
+    end
+end
+```
