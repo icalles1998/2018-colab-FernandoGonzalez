@@ -96,8 +96,6 @@ end
 ```
 #### Explicación del Código:
 con la sentencia ``nbins = 20;`` se define el número de intervalos de tiempo a representar, los cuales se corresponden con cada una de las barras que se verán representadas, y se guarda en la vaiable "nbins". Posteriormente, se representa el histograma haciendo uso del procedimiento **hist** que Matlab nos proporciona.
-#### Ejemplo Salida:
-
 ### procedimiento_2:
 #### Especificación del Código:
 ```
@@ -205,3 +203,4 @@ end
 ```
 Igual que en el caso anterior, el segundo bucle de **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que la categoría leída de teclado sea correcta.
 
+Tras estos dos bucles, llegamos a la sentencia ``impr_operacion1(cat_elegida, accion, categoria, tiempo);``, la cual se trata de una llamada al procedimiento **impr_operacion1** que recibe como parámetros la categoria y la accion elegidas, el array de categorías "categoria" y el array de tiempos "tiempo".
