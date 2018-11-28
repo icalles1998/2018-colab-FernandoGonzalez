@@ -203,4 +203,58 @@ end
 ```
 Igual que en el caso anterior, el segundo bucle de **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que la categoría leída de teclado sea correcta.
 
-Tras estos dos bucles, llegamos a la sentencia ``impr_operacion1(cat_elegida, accion, categoria, tiempo);``, la cual se trata de una llamada al procedimiento **impr_operacion1** que recibe como parámetros la categoria y la accion elegidas, el array de categorías "categoria" y el array de tiempos "tiempo".
+Tras estos dos bucles, llegamos a la sentencia ``impr_operacion1(cat_elegida, accion, categoria, tiempo);``, la cual se trata de una llamada al procedimiento **impr_operacion1** que recibe como parámetros la categoria y la accion elegidas, el array de categorías "categoria" y el array de tiempos "tiempo". A continuación se especifica el código de este procedimiento:
+```
+function [] = impr_operacion1(celegida, accion, c, t);
+    if accion == 1
+        impr_media(celegida, c, t); %Imprimir la media
+    elseif accion == 2
+        impr_mediana(celegida, c, t); %Imprimir la mediana
+    else
+        impr_desvtip(celegida, c, t); %Imprime la desviacion tipica
+    end
+    salto_linea();
+end
+```
+Lo que hace este procedimiento es ejecutar cada uno de los procedimientos **impr_media**, **impr_mediana** o **impr_desvtip** según la acción previamente elegida por el usuario y que ya sabemos que es correcta gracias a la previa llamada bloqueante.
+* **impr_media:** Imprime la media del tiempo correspondiente a los tiempos de la categoría elegida.
+```
+function [] = impr_media(celegida, c, t);
+    if strcmp(celegida, 'Todas')
+        media = ['Media: ', tiempoenhoras(mean(t))];
+    else
+        arr = [];
+        [filas, columnas] = size(c); 
+        j = 1;
+        for i = 1:filas
+           if strcmp(c(i), celegida)
+               arr(j) = t(i);
+               j = j + 1;
+           end
+        end
+        %Calculo la media
+        media = ['Media: ', tiempoenhoras(mean(arr))];
+    end
+    disp(media);
+end
+```
+Si la categoría introducida se corresponde con el string "Todas", directamente se calcula la media del array de tiempos 't', es decir, teniendo en cuenta **TODAS** las categorías.
+```
+if strcmp(celegida, 'Todas')
+    media = ['Media: ', tiempoenhoras(mean(t))];
+```
+Si la categoría introducida es cualquier otra distinta de "Todas", se guarda en un array auxiliar llamado 'arr' los tiempos correspondientes a dicha categoría y se calcula la media de este array.
+```
+else
+    arr = [];
+    [filas, columnas] = size(c);
+    j = 1;
+    for i = 1:filas
+       if strcmp(c(i), celegida)
+           arr(j) = t(i);
+           j = j + 1;
+       end
+    end
+    media = ['Media: ', tiempoenhoras(mean(arr))];
+end
+```
