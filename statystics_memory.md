@@ -318,3 +318,41 @@ function [a, ok] = leeraccion2();
 end
 ```
 * ``impr_operacion2(accion, tiempo);`` Con la llamada a este procedimiento se ejecuta el siguiente código:
+```
+function [] = impr_operacion2(accion, t);
+    if accion == 1
+        impr_prob_debajo(t); %Imprimir probabilidad de llegar por debajo de un tiempo determinado
+        salto_linea();
+    elseif accion == 2
+        impr_prob_encima(t); %Imprimir la probabilidad de llegar por encima de un tiempo determinado
+        salto_linea();
+    else
+        impr_prob_entre(t); %Imprimir la probabilidad de llegar entre dos tiempos
+        salto_linea();
+    end
+end
+```
+Dependiendo de la acción introducida por el usuario, se ejecuta el procedimiento **impr_prob_debajo(t)**, **impr_prob_encima(t)** o **impr_prob_entre(t)**. Se procede a explicar cada una de ellas:
+##### impr_prob_debajo:
+```
+function [] = impr_prob_debajo(t);
+    tmin = tiempomenor(t); %Guardo el tiempo menor
+    ti = leertiempo(); %Leo y guardo el tiempo en formato hh:mm:ss como string
+    %Paso el tiempo introducido a segundos
+    [Y, M, D, H, MN, S] = datevec(ti);
+    ti = H*3600+MN*60+S;
+    %Calculo la media (mu)
+    media = mean(t);
+    %Calculo la desv tipica (sigma)
+    desv = std(t);
+    %Calculo la integral de la cdf entre tmin y ti
+    prob = normcdf(ti, media, desv) - normcdf(tmin, media, desv);
+    if prob <= 0
+        prob = 0;
+    end
+    %Lo imprimo por pantalla
+    salto_linea();
+    impr = ['Probabilidad: ', num2str(prob)];
+    disp(impr);
+end
+```
