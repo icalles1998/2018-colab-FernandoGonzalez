@@ -613,12 +613,12 @@ function [] = impr_percentil(t);
             disp('Numero de percentil introducido incorrecto');
         end
     end
-    K = npercent / 100; %Defino la medida de posicion del percentil
-    [nelems, cols] = size(t); %Guardo en 'nelems' el numero de elementos del array 't'
-    pos = nelems * K; % Definimos la posicion en la que se encuentra nuestro percentil.
-    arr = sort(t); %Ordeno el array 't' y lo guardo en 'arr'
-    perc = tiempoenhoras(percentil(pos, arr)); %calculo el percentil y lo guardo en 'perc'
-    impr = ['Percentil ', num2str(npercent), ': ', perc]; %Imprimo el percentil
+    K = npercent / 100;
+    [nelems, cols] = size(t);
+    pos = nelems * K;
+    arr = sort(t);
+    perc = tiempoenhoras(percentil(pos, arr));
+    impr = ['Percentil ', num2str(npercent), ': ', perc];
     disp(impr);
     salto_linea();
 end
