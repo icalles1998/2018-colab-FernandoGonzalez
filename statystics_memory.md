@@ -261,3 +261,18 @@ end
 Finalmente, con la sentencia ``disp(media);`` se imprime el valor de la media calculado.
 * **impr_mediana:** Imprime la mediana del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la mediana que se hace llamando al procedimiento ``median(a)`` donde 'a' es el array de tiempos.
 * **impr_desvtip:** Imprime la desviación típica del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la desviación que se hace llamando al procedimiento ``std(a)`` donde 'a' es el array de tiempos.
+### procedimiento_3:
+#### Especificación del Código:
+Este procedimiento se compone de una llamada al procedimiento **impr_gaussiana** el cual se compone del siguiente código:
+```
+function [] = impr_gaussiana(t);
+    disp("Generando Gaussiana...");
+    salto_linea();
+    nbins = 20;
+    figure
+    histfit(t, nbins);
+    title('Gaussiana sobre Histograma');
+end
+```
+#### Explicación del Código:
+Se define el número de intervalos en los que vamos a agrupar los tiempos guardados en el array 't' que recibe como parámetro este procedimiento y se guarda en 'nbins'. Posteriormente se imprime por pantalla el histograma con la gaussiana superpuesta haciendo uso de la función ``histfit(t, nbins);`` que nos proporciona Matlab.
