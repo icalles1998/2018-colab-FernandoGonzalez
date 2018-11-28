@@ -423,3 +423,18 @@ end
 impr = ['Probabilidad: ', num2str(prob)];
 disp(impr);
 ```
+##### impr_prob_encima:
+Únicamente se diferencia con la anterior en la sentencia ``tmax = tiempomayor(t);``, mediante la que se guarda el tiempo mayor; y en la sentencia ``prob = normcdf(tmax, media, desv) - normcdf(ti, media, desv);``.
+El código de la función **tiempomayor** es el mostrado a continuación:
+ ```
+ function [n] = tiempomayor(t);
+    n = t(1);
+    [filas, columnas] = size(t);
+    for i = 2:filas
+       if t(i) > n
+           n = t(i);
+       end
+    end
+end
+ ```
+ ##### impr_prob_entre:
