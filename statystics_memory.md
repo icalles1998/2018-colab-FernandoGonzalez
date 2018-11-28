@@ -180,4 +180,11 @@ end
 ```
 La sentencia ``strcmp(s1, s2)`` compara dos strings ('s1' y 's2') devolviendo '1' si son iguales (o 'true') y '0' sin no lo son (0 'false'). Por lo tanto, en el momento que el string introducido por el usuario sea igual a cualquiera de las categorías guardads en el array "categoria", "ok" pasará a almacenar el valor booleano 'true'. Mientras tanto, este valor será 'false'. Lo que la función **leercategoria()** devuelve son los valores de "c" y "ok", en donde se almacenan la categoría introducida por el usuario y el valor booleano que indica si ésta es correcta, respectivamente.
 
+Por último, el usuario también podrá introducir la cadena "Todas" para que las operaciones siguientes se apliquen a todas las categorías. Es por esto que tenemos que hacer que es string "Todas" sea válido. De eso se encarga el siguiente código también perteneciente a la función **leercategoria()**, como puede observarse:
+```
+if strcmp(c, "Todas")
+    ok = true;
+end
+```
 Igual que en caso anterior, el segundo bucle de **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que la categoría leída de teclado sea correcta.
+
