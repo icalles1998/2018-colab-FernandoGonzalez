@@ -129,3 +129,14 @@ function [] = impr_submenu11();
 end
 ```
 Como vemos, imprime por pantalla la cadena *Elija Una Categoría* y posteriormente inserta un salto de línea.
+* ``[accion, ok] = leeraccion1();``: Esta sentencia llama a la función **leeraccion1()**, la cual devuelve dos valores que se guardan en "accion" y "ok" respectivamente. A continuación vemos el código de esta función y la explicación del mismo:
+```
+function [a, ok] = leeraccion1();
+    a = input('Introduzca un Numero: ');
+    if a == 1 | a == 2 | a == 3
+        ok = true;
+    else
+        ok = false;
+    end
+end
+```
