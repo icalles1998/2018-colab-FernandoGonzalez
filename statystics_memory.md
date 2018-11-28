@@ -538,3 +538,50 @@ end
 ```
 Este procedimiento ejecuta a su vez los procedimientos **impr_cuartiles** o **impr_percentil** en función de la acción elegida por el usuario.
 * **impr_cuartiles:** Imprimes los tres cuartiles. Se compone del siguiente código que a su vez hace las llamadas a **impr_primer_cuartil**, **impr_seg_cuartil** e **impr_tercer_cuartil**.
+```
+function [] = impr_cuartiles(t);
+    impr_primer_cuartil(t);
+    impr_seg_cuartil(t);
+    impr_tercer_cuartil(t);
+    salto_linea();
+end
+```
+A continuación se detallan cada uno de los procedimientos:
+##### impr_primer_cuartil:
+```
+function [] = impr_primer_cuartil(t);
+    K = 0.25;
+    [nelems, cols] = size(t);
+    pos = nelems * K;
+    arr = sort(t);
+    cuart = tiempoenhoras(percentil(pos, arr));
+    impr = ['Primer Cuartil: ', cuart];
+    disp(impr);
+end
+```
+**1.** En "K" se almacena la medida de posicion del primer cuartil.
+**2.** Se guarda en "nelems" el número de elementos del array 't'.
+**3.** Se define la posición en la que se encuentra el cuartil.
+**4.** Se ordena el array 't' de manera ascendente y se guarda en 'arr'.
+**5.** Se calcula el cuartil en formato hh:mm:ss con la función *tiempoenhoras* haciendo uso de la función **percentil**, la cual se compone del siguiente código:
+```
+function [n] = percentil(pos, arr);
+    pos_ent = floor(pos);
+    if pos > pos_ent
+        n = (arr(pos_ent) + arr(pos_ent + 1)) / 2;
+    else
+        n = arr(pos_ent);
+    end
+end
+```
+Me quedo con la parte entera de la posición y evalúo si la posicion es mayor que su parte entera; en cuyo caso se ejecuta la sentencia ``n = (arr(pos_ent) + arr(pos_ent + 1)) / 2;`` para guardar en 'n' el valor del percentil. De ser iguales la parte entera de 'pos' y 'pos', se ejecuta ``n = arr(pos_ent)``.
+**6.** Se imprime el cuartil.
+##### impr_seg_cuartil:
+El segundo cuartil se corresponde con la mediana, por lo que su código es como se aprecia a continuación:
+```
+function [] = impr_seg_cuartil(t);
+    cuart = tiempoenhoras( median(t));
+    impr = ['Segundo Cuartil: ', cuart];
+    disp(impr);
+end
+```
