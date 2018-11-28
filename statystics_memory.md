@@ -150,3 +150,5 @@ if ~ok
 end
 ```
 Decir que **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que el número leído de teclado sea correcto.
+
+En cuanto al segundo bucle del que consta **procedimiento_1**, decir que es idéntico al ya mencionado salvo por la sentencia ``[cat_elegida, ok] = leercategoria(categoria);``.
