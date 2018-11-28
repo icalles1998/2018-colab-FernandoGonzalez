@@ -267,6 +267,33 @@ end
 Finalmente, con la sentencia ``disp(media);`` se imprime el valor de la media calculado.
 * **impr_mediana:** Imprime la mediana del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la mediana que se hace llamando al procedimiento ``median(a)`` donde 'a' es el array de tiempos.
 * **impr_desvtip:** Imprime la desviación típica del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la desviación que se hace llamando al procedimiento ``std(a)`` donde 'a' es el array de tiempos.
+
+La función **tiempoenhoras(n)** se encarga de pasar un tiempo en segundos (que es el argumento 'n') a formato hh:mm:ss y lo devuelve como string. La implementación de esta función es la siguiente:
+```
+function [s] = tiempoenhoras(n); %Recibe tiempo en segundos y devuelve tiempo en formato hh:mm:ss
+    finish = false;
+    segs = 0;
+    mins = 0;
+    horas = 0;
+    ts = n;
+    while ~finish
+        t = ts - 60;
+        if t >= 0
+            mins = mins + 1;
+            ts = t;
+        else
+            finish = true;
+            segs = segs + ts;
+        end
+        if mins >= 60
+            horas = horas + 1;
+            mins = mins - 60;
+        end
+    end
+    s = [num2str(horas), ':', num2str(mins), ':', num2str(segs)];
+end
+```
+La algoritmia se trata de ir restando 60 segundos a 'n' e ir incrementando progresivamente los minutos, horas y segundos según corresponda.
 ### procedimiento_3:
 #### Especificación del Código:
 Este procedimiento se compone de una llamada al procedimiento **impr_gaussiana** el cual se compone del siguiente código:
@@ -344,7 +371,6 @@ function [] = impr_prob_debajo(t);
     ti = H*3600+MN*60+S;
     
     media = mean(t);
-    
     desv = std(t);
     
     prob = normcdf(ti, media, desv) - normcdf(tmin, media, desv);
@@ -369,9 +395,19 @@ function [n] = tiempomenor(t);
     end
 end
 ```
-**2.** se lee el tiempo introducido por el usuario haciendo uno de la funcion **leertiempo** cuyo código es el siguiente:
+**2.** Se lee el tiempo introducido por el usuario haciendo uno de la funcion **leertiempo** cuyo código es el siguiente:
 ```
 function [c] = leertiempo();
     c = input('Introduzca tiempo en formato hh:mm:ss: ', 's');
 end
+```
+**3.** El tiempo leído se pasa a segundos y se guarda en 'ti' mediante las siguientes sentencias:
+```
+[Y, M, D, H, MN, S] = datevec(ti);
+ti = H*3600+MN*60+S;
+```
+**4.** Guardamos la media y la desviación típica en las variables 'media' y 'desv' tal como se muestra:
+```
+media = mean(t);
+desv = std(t);
 ```
