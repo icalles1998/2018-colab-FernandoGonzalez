@@ -258,3 +258,6 @@ else
     media = ['Media: ', tiempoenhoras(mean(arr))];
 end
 ```
+Finalmente, con la sentencia ``disp(media);`` se imprime el valor de la media calculado.
+* **impr_mediana:** Imprime la mediana del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la mediana que se hace llamando al procedimiento ``median(a)`` donde 'a' es el array de tiempos.
+* **impr_desvtip:** Imprime la desviación típica del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la desviación que se hace llamando al procedimiento ``std(a)`` donde 'a' es el array de tiempos.
