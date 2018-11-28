@@ -412,3 +412,14 @@ media = mean(t);
 desv = std(t);
 ```
 **5.** Calculamos la probabilidad deseada con la sentencia ``prob = normcdf(ti, media, desv) - normcdf(tmin, media, desv);`` haciendo uso de la función *normcdf* que Matlab proporciona.
+**6.** Imponemos que la probabilidad no pueda ser menor que 0 con el siguiente código:
+```
+if prob <= 0
+    prob = 0;
+end
+```
+**7.** Por último, se imprime la probabilidad de la siguiente manera:
+```
+impr = ['Probabilidad: ', num2str(prob)];
+disp(impr);
+```
