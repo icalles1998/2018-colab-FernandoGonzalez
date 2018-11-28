@@ -147,7 +147,7 @@ Como vemos, imprime por pantalla la cadena *Elija Una Categoría* y posteriormen
 * ``[accion, ok] = leeraccion1();``: Esta sentencia llama a la función **leeraccion1()**, la cual devuelve dos valores que se guardan en "accion" y "ok" respectivamente. A continuación vemos el código de esta función y la explicación del mismo:
 ```
 function [a, ok] = leeraccion1();
-    a = input('Introduzca un Numero: ');
+    a = leernum();
     if a == 1 | a == 2 | a == 3
         ok = true;
     else
@@ -155,7 +155,13 @@ function [a, ok] = leeraccion1();
     end
 end
 ```
-Como vemos, se lee un número de teclado y se almacena en "a". Posteriormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
+Como vemos, se lee un número de teclado haciendo uso de la función **leernum()** cuyo código es el siguiente:
+```
+function [n] = leernum();
+    n = input('Introduzca un numero: ');
+end
+```
+y se almacena en "a". Posteriormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
 
 Continuando con el código de **procedimiento_1**, si el número introducido por el usuario es incorrecto (en cuyo caso, "ok" almacenará el valor 'false'), se imprime un mensaje de error de la siguiente manera:
 ```
@@ -300,4 +306,15 @@ function [] = impr_submenu2();
     disp("3) Probabilidad entre dos tiempos");
 end
 ```
-* ``[accion, ok] = leeraccion2();`` Se encarga de leer el número introducido por el usuario, que se corresponde con la acción que éste quiere que se realice, y evalar si es correcta. El valor del número se guarda en "accion" y el booleano que indica si es correcto se guarda en "ok"
+* ``[accion, ok] = leeraccion2();`` Se encarga de leer el número introducido por el usuario, que se corresponde con la acción que éste quiere que se realice, y evalar si es correcta. El valor del número se guarda en "accion" y el booleano que indica si es correcto se guarda en "ok". El código es el siguiente:
+```
+function [a, ok] = leeraccion2();
+    a = leernum();
+    if a == 1 | a == 2 | a == 3
+        ok = true;
+    else
+        ok = false;
+    end
+end
+```
+* ``impr_operacion2(accion, tiempo);`` Con la llamada a este procedimiento se ejecuta el siguiente código:
