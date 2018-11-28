@@ -106,3 +106,25 @@ while ~ok
 end
 impr_operacion1(cat_elegida, accion, categoria, tiempo);
 ```
+* **Explicación del Código:**
+En primer lugar, observamos que consta de dos bucles "while". En primer lugar me centraré en el primero:
+```
+ok = false;
+while ~ok
+    impr_submenu1();
+    [accion, ok] = leeraccion1();
+    salto_linea();
+    if ~ok
+        disp("Numero introducido Incorrecto");
+        salto_linea();
+    end
+end
+```
+Para comenzar, se declara un booleano que comienza inicializado a "false" y que servirá como condición de salida del bucle. Lo siguiente que se ejecuta una vez dentro del bucle es el procedimiento **impr_submenu1()**, el cual se encarga de imprimir un nuevo menú que indica al usuario su siguiente acción a realizar. Consta del siguiente código:
+```
+function [] = impr_submenu11();
+    disp("Elija Una categoría:");
+    salto_linea();
+end
+```
+Como vemos, imprime por pantalla la cadena *Elija Una Categoría* y posteriormente inserta un salto de línea.
