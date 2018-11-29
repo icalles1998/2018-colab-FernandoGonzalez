@@ -145,7 +145,7 @@ function [] = impr_submenu11();
     salto_linea();
 end
 ```
-Como vemos, imprime por pantalla la cadena *Elija Una Categoría* y posteriormente inserta un salto de línea.
+Como vemos, imprime por pantalla la cadena *Elija Una Categoría* y, posteriormente, inserta un salto de línea.
 * ``[accion, ok] = leeraccion1();``: Esta sentencia llama a la función **leeraccion1()**, la cual devuelve dos valores que se guardan en "accion" y "ok" respectivamente. A continuación vemos el código de esta función y la explicación del mismo:
 ```
 function [a, ok] = leeraccion1();
@@ -157,7 +157,7 @@ function [a, ok] = leeraccion1();
     end
 end
 ```
-Como vemos, se lee un número de teclado haciendo uso de la función **leernum()** cuyo código es el siguiente:
+Como puede apreciarse, se lee un número de teclado haciendo uso de la función **leernum()** cuyo código es el siguiente:
 ```
 function [n] = leernum();
     n = input('Introduzca un numero: ');
@@ -165,16 +165,16 @@ end
 ```
 y se almacena en "a". Posteriormente se evalúa si dicho número es válido y se almacena un booleano ('true' ó 'false) en "ok". La función devuelve los valores de "a" y "ok".
 
-Continuando con el código de **procedimiento_1**, si el número introducido por el usuario es incorrecto (en cuyo caso, "ok" almacenará el valor 'false'), se imprime un mensaje de error de la siguiente manera:
+Continuando con el código de **procedimiento_2**, si el número introducido por el usuario es incorrecto (en cuyo caso, "ok" almacenará el valor 'false'), se imprime un mensaje de error de la siguiente manera:
 ```
 if ~ok
     disp("Numero introducido Incorrecto");
     salto_linea();
 end
 ```
-Decir que este primer bucle de **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que el número leído de teclado sea correcto.
+Decir que este primer bucle de **procedimiento_2** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que el número leído de teclado sea correcto.
 
-En cuanto al segundo bucle del que consta **procedimiento_1**, decir que es idéntico al ya mencionado salvo por la sentencia ``[cat_elegida, ok] = leercategoria(categoria);``.
+En cuanto al segundo bucle del que consta **procedimiento_2**, decir que es idéntico al ya mencionado salvo por la sentencia ``[cat_elegida, ok] = leercategoria(categoria);``.
 Con esta sentencia se llama a la función **leercategoria(categoria)** la cual recibe como parámetro el array "categoria" y devuelve dos valores que se almacenan en "cat_elegida" y "ok" respectivamente. Su implementación es la siguiente:
 ```
 function [c, ok] = leercategoria(cat);
@@ -195,13 +195,13 @@ function [c, ok] = leercategoria(cat);
 end
 ```
 Esta función se encarga de leer una categoría introducida por el usuario y comprobar si es correcta, es decir, si se corresponde con alguna de las categorías leídas del fichero excel.
-Con la sentencia ``c = input('Introduzca una categoria de las siguientes: ', 's');`` se almacena en "c" la categoría introducida por el usuario (como string). Posteiormente guardo en la variable "filas" el número de elementos que contiene el array "categoria" de la siguiente manera: ``[filas, columnas] = size(cat);``. En las dos líneas sucesivas se declara la variable "i" y se inicializa a 1 y se inicializa la variable "ok" a 'false'. Estas dos variables nos servirán como condicones de salida del bucle, ya que el buccle iterará mientras el valor contenido en "i" sea menor que el numero de elementos del array "categoria" (guardado en "filas") o bien mientras "ok" sea 'fasle'. ¿Cuándo cambia el valor de "ok"? El valor de "ok" responde al siguiente código:
+Con la sentencia ``c = input('Introduzca una categoria de las siguientes: ', 's');`` se almacena en "c" la categoría introducida por el usuario (como string). Posteiormente se guarda en la variable "filas" el número de elementos que contiene el array "categoria" de la siguiente manera: ``[filas, columnas] = size(cat);``. En las dos líneas sucesivas se declara la variable "i" y se inicializa a 1. También se inicializa la variable "ok" a 'false'. Estas dos variables nos servirán como condicones de salida del bucle, ya que el bucle iterará mientras el valor contenido en "i" sea menor que el numero de elementos del array "categoria" (guardado en "filas") o bien mientras "ok" sea 'false'. ¿Cuándo cambia el valor de "ok"? El valor de "ok" responde al siguiente código:
 ```
 if strcmp(cat(i), c)
     ok = true;
 end
 ```
-La sentencia ``strcmp(s1, s2)`` compara dos strings ('s1' y 's2') devolviendo '1' si son iguales (o 'true') y '0' sin no lo son (0 'false'). Por lo tanto, en el momento que el string introducido por el usuario sea igual a cualquiera de las categorías guardads en el array "categoria", "ok" pasará a almacenar el valor booleano 'true'. Mientras tanto, este valor será 'false'. Lo que la función **leercategoria()** devuelve son los valores de "c" y "ok", en donde se almacenan la categoría introducida por el usuario y el valor booleano que indica si ésta es correcta, respectivamente.
+La sentencia ``strcmp(s1, s2)`` compara dos strings ('s1' y 's2') devolviendo '1' si son iguales (o 'true') y '0' sin no lo son (o 'false'). Por lo tanto, en el momento que el string introducido por el usuario sea igual a cualquiera de las categorías guardadas en el array "categoria", "ok" pasará a almacenar el valor booleano 'true'. Mientras tanto, este valor será 'false'. Lo que la función **leercategoria()** devuelve son los valores de "c" y "ok", en donde se almacenan la categoría introducida por el usuario y el valor booleano que indica si ésta es correcta, respectivamente.
 
 Por último, el usuario también podrá introducir la cadena "Todas" para que las operaciones siguientes se apliquen a todas las categorías. Es por esto que tenemos que hacer que es string "Todas" sea válido. De eso se encarga el siguiente código también perteneciente a la función **leercategoria()**, como puede observarse:
 ```
@@ -209,7 +209,7 @@ if strcmp(c, "Todas")
     ok = true;
 end
 ```
-Igual que en el caso anterior, el segundo bucle de **procedimiento_1** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que la categoría leída de teclado sea correcta.
+Igual que en el caso anterior, el segundo bucle de **procedimiento_2** es una llamada **BLOQUEANTE**, lo cual quiere decir que estará ejecutándose iterativamente hasta que la categoría leída de teclado sea correcta.
 
 Tras estos dos bucles, llegamos a la sentencia ``impr_operacion1(cat_elegida, accion, categoria, tiempo);``, la cual se trata de una llamada al procedimiento **impr_operacion1** que recibe como parámetros la categoria y la accion elegidas, el array de categorías "categoria" y el array de tiempos "tiempo". A continuación se especifica el código de este procedimiento:
 ```
