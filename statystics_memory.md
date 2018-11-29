@@ -17,15 +17,17 @@ La sentencia utilizada para leer el rango de celdas es ``xlsread(file, xlRange);
 **Nota:** Con respecto a la importación de las horas, decir que Matlab las guarda en formato de días. Es decir, para Matlab 12:00:00 (hh:mm:ss) se corresponde con 0.5 (días). Es por esto que para el caso de la columna "Tiempo" hemos hecho uso de una función a la que hemos llamado **segundos_tiempo** la cual devuelve el tiempo en segundos al que corresponde el valor en días recogido por Matlab. La especificación de la función es la siguiente:
 ```
 function [num] = segundos_tiempo(num);
-    for i = 1:30709
+    [filas, columnas] = size(num);
+    for i = 1:filas
         num(i) = num(i) * 86400;
     end
 end
 ```
 Algo parecido ocurre con la columna "Ritmo", con la salvedad de que el formato de esta columna en excel es "mm:ss", por lo que el procedimiento para pasarlo a segundos difiere al anterior tanto en cuanto a que ha de ser dividido por 60. Esto se debe a que Matlab siempre lee este tipo de datos con el formato "hh:mm:ss", pero en este caso, lo que Matlab interpreta como horas son minutos. Como he mencionado, la manera de solucionar esto es igual que la anterior pero dividiendo además por 60, tal como se muestra a continuación. Esta función recibe el nombre de **segundos_ritmo**.
 ```
-function [num] = segundos_tiempo(num);
-    for i = 1:30709
+function [num] = segundos_ritmo(num);
+    [filas, columnas] = size(num);
+    for i = 1:filas
         num(i) = num(i) * 86400 / 60;
     end
 end
