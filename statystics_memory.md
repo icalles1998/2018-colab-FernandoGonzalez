@@ -704,4 +704,4 @@ Y tras introducir el número (para el ejemplo se ha introducido 21), la salida s
 Percentil 21: 0:50:25
 ```
 
-**NOTA:** Cualquier número introducido que no conste entre las opciones dadas por cualquiera de los menús y/o submenús probocará un aviso de error pero el programa continuará su ejecución.
+**NOTA:** Cualquier número introducido que no conste entre las opciones dadas por cualquiera de los menús y/o submenús provocará un aviso de error pero el programa continuará su ejecución.
