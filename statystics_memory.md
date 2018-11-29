@@ -646,7 +646,7 @@ Introduzca un numero:
 En este estado, tecleamos el número que se corresponda con la opción que queremos llevar a cabo.
 
 En el caso de las opciones 2, 4 y 5 se imprimirá un submenú o en ocasiones hasta dos ofreciendo al usuario. Se procede a mostrarlos:
-* **Submenú opción *2) Datos Numéricos*:**
+* **Submenú Opción *2) Datos Numéricos*:**
 ```
 Eliga la acción a realizar:
  
@@ -666,4 +666,11 @@ Introduzca una categoria:
 Suponiendo que hemos introducido la categoría 'PromM' una posible salida del programa sería la siguiente:
 ```
 Desviación Típica: 0:10:4.9792
+```
+* **Submenú Opción *4) Cálculo de Probabilidades*:**
+```
+1) Probabilidad por debajo de un tiempo
+2) Probabilidad por encima de un tiempo
+3) Probabilidad entre dos tiempos
+Introduzca un numero:
 ```
