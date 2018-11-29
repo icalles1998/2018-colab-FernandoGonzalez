@@ -674,3 +674,11 @@ Desviación Típica: 0:10:4.9792
 3) Probabilidad entre dos tiempos
 Introduzca un numero:
 ```
+Supongamos que elegimos la opción 1. La salida podría ser la siguiente:
+```
+Introduzca tiempo en formato hh:mm:ss:
+```
+Y tras haber introducido el tiempo deseado, se imprimirá algo como:
+```
+Probabilidad: 0.48469
+```
