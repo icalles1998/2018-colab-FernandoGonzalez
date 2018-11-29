@@ -1,4 +1,4 @@
-# Memoria de la Práctica
+# Funcionamiento Interno del Programa
 ## Importación de datos:
 En primer lugar, declaramos el nombre del fichero que vamos a leer (fichero excel) de la siguiente manera: 
 
@@ -634,3 +634,21 @@ function [n, ok] = numpercentil();
     end
 end
 ```
+
+# Guía de Uso
+Al ejecutar el programa, lo primero que veremos es un menú como el que se ve a continuación:
+```
+Teclee la opción deseada:
+ 
+1) Histograma
+2) Datos Numéricos
+3) Distribución Gaussiana
+4) Cálculo de Probabilidades
+5) Cálculo de Cuartiles
+6) Salir del Programa
+Introduzca un numero: 
+```
+En este estado, tecleamos el número que se corresponda con la opción que queremos llevar a cabo.
+
+En el caso de las opciones 2, 4 y 5 se imprimirá un submenú o en ocasiones hasta dos ofreciendo al usuario. Se procede a mostrarlos:
+* **Submenú opción *2) Datos Numéricos*:**
