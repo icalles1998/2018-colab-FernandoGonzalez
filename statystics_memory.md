@@ -43,7 +43,7 @@ function [] = mostrar_menu_pcpal();
     disp("2) Datos Numéricos");
     disp("3) Distribución Gaussiana");
     disp("4) Cálculo de Probabilidades");
-    disp("5) Cálculo de Cuartiles");
+    disp("5) Cálculo de Percentiles");
     disp("6) Salir del Programa");
 end
 ```
@@ -203,7 +203,7 @@ end
 ```
 La sentencia ``strcmp(s1, s2)`` compara dos strings ('s1' y 's2') devolviendo '1' si son iguales (o 'true') y '0' sin no lo son (o 'false'). Por lo tanto, en el momento que el string introducido por el usuario sea igual a cualquiera de las categorías guardadas en el array "categoria", "ok" pasará a almacenar el valor booleano 'true'. Mientras tanto, este valor será 'false'. Lo que la función **leercategoria()** devuelve son los valores de "c" y "ok", en donde se almacenan la categoría introducida por el usuario y el valor booleano que indica si ésta es correcta, respectivamente.
 
-Por último, el usuario también podrá introducir la cadena "Todas" para que las operaciones siguientes se apliquen a todas las categorías. Es por esto que tenemos que hacer que es string "Todas" sea válido. De eso se encarga el siguiente código también perteneciente a la función **leercategoria()**, como puede observarse:
+Por último, el usuario también podrá introducir la cadena "Todas" para que las operaciones siguientes se apliquen a todas las categorías. Es por esto que tenemos que hacer que ese string "Todas" sea válido. De eso se encarga el siguiente código también perteneciente a la función **leercategoria()**, como puede observarse:
 ```
 if strcmp(c, "Todas")
     ok = true;
@@ -267,8 +267,8 @@ else
 end
 ```
 Finalmente, con la sentencia ``disp(media);`` se imprime el valor de la media calculado.
-* **impr_mediana:** Imprime la mediana del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la mediana que se hace llamando al procedimiento ``median(a)`` donde 'a' es el array de tiempos.
-* **impr_desvtip:** Imprime la desviación típica del tiempo correspondiente a los tiempos de la categoría elegida. Su impementación es idéntica a **impr_media** salvo por el cálculo de la desviación que se hace llamando al procedimiento ``std(a)`` donde 'a' es el array de tiempos.
+* **impr_mediana:** Imprime la mediana del tiempo correspondiente a los tiempos de la categoría elegida. Su implementación es idéntica a **impr_media** salvo por el cálculo de la mediana que se hace llamando al procedimiento ``median(a)`` donde 'a' es el array de tiempos.
+* **impr_desvtip:** Imprime la desviación típica del tiempo correspondiente a los tiempos de la categoría elegida. Su implementación es idéntica a **impr_media** salvo por el cálculo de la desviación que se hace llamando al procedimiento ``std(a)`` donde 'a' es el array de tiempos.
 
 La función **tiempoenhoras(n)** se encarga de pasar un tiempo en segundos (que es el argumento 'n') a formato hh:mm:ss y lo devuelve como string. La implementación de esta función es la siguiente:
 ```
@@ -335,7 +335,7 @@ function [] = impr_submenu2();
     disp("3) Probabilidad entre dos tiempos");
 end
 ```
-* ``[accion, ok] = leeraccion2();`` Se encarga de leer el número introducido por el usuario, que se corresponde con la acción que éste quiere que se realice, y evalar si es correcta. El valor del número se guarda en "accion" y el booleano que indica si es correcto se guarda en "ok". El código es el siguiente:
+* ``[accion, ok] = leeraccion2();`` Se encarga de leer el número introducido por el usuario, que se corresponde con la acción que éste quiere que se realice, y evaluar si es correcta. El valor del número se guarda en "accion" y el booleano que indica si es correcto se guarda en "ok". El código es el siguiente:
 ```
 function [a, ok] = leeraccion2();
     a = leernum();
@@ -385,7 +385,7 @@ function [] = impr_prob_debajo(t);
     disp(impr);
 end
 ```
-**1.** Se guarda el tiempo menor del array de tiempos 't' haciendo uso de la función **tiempomenor** suyo código es el siguiente:
+**1.** Se guarda el tiempo menor del array de tiempos 't' haciendo uso de la función **tiempomenor** cuyo código es el siguiente:
 ```
 function [n] = tiempomenor(t);
     n = t(1);
@@ -534,7 +534,7 @@ function [] = impr_operacion3(a, t);
 end
 ```
 Este procedimiento ejecuta a su vez los procedimientos **impr_cuartiles** o **impr_percentil** en función de la acción elegida por el usuario.
-* **impr_cuartiles:** Imprimes los tres cuartiles. Se compone del siguiente código que a su vez hace las llamadas a **impr_primer_cuartil**, **impr_seg_cuartil** e **impr_tercer_cuartil**.
+* **impr_cuartiles:** Imprime los tres cuartiles. Se compone del siguiente código que a su vez hace las llamadas a **impr_primer_cuartil**, **impr_seg_cuartil** e **impr_tercer_cuartil**.
 ```
 function [] = impr_cuartiles(t);
     impr_primer_cuartil(t);
@@ -620,7 +620,7 @@ function [] = impr_percentil(t);
     salto_linea();
 end
 ```
-Como puede observarse, el código se compone de un bucle while que itera tantas veces como sea necesario hasta que el usuario introduzca un número correcto (esto se evalúa con la función *numpercentil()*) y después, una serie de sentencias que son idénticas a la función **impr_primer_cuartil** o **impr_tercer_cuartil** previamente explicadas. Por tanto, la única novedad es que el parámetro "K" depende del número de percentil "npercent" leída de teclado mediante la sentencia ``[npercent, ok] = numpercentil();``. A continuación se muestra el código de la función *numpercentil*:
+Como puede observarse, el código se compone de un bucle while que itera tantas veces como sea necesario hasta que el usuario introduzca un número correcto (esto se evalúa con la función *numpercentil()*) y después, una serie de sentencias que son idénticas a la función **impr_primer_cuartil** o **impr_tercer_cuartil** previamente explicadas. Por tanto, la única novedad es que el parámetro "K" depende del número de percentil "npercent" leído de teclado mediante la sentencia ``[npercent, ok] = numpercentil();``. A continuación se muestra el código de la función *numpercentil*:
 ```
 function [n, ok] = numpercentil();
     n = input('Introduzca el número de percentil que desea: ');
@@ -641,7 +641,7 @@ Teclee la opción deseada:
 2) Datos Numéricos
 3) Distribución Gaussiana
 4) Cálculo de Probabilidades
-5) Cálculo de Cuartiles
+5) Cálculo de Percentiles
 6) Salir del Programa
 Introduzca un numero: 
 ```
