@@ -659,5 +659,11 @@ En este punto, el usuario ha de introducir un número dependiendo del cálculo q
 
 Supongamos que hemos elegido la opción *3) Desviación Típica*
 ```
+Introduzca una categoria:
+```
+**NOTA:** También se admite la categoría "Todas". Haciendo esto, el cálculo se aplicará a **TODAS** las categorías.
 
+Suponiendo que hemos introducido la categoría 'PromM' una posible salida del programa sería la siguiente:
+```
+Desviación Típica: 0:10:4.9792
 ```
