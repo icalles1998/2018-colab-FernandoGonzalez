@@ -448,7 +448,7 @@ function [] = impr_prob_entre(t);
     
     ti1 = leertiempo();
     ti2 = leertiempo();
-    
+   
     [Y, M, D, H, MN, S] = datevec(ti1);
     ti1 = H*3600+MN*60+S;
     
@@ -462,22 +462,17 @@ function [] = impr_prob_entre(t);
      tmayor = tiempomayor(t);
     
     if ti1 >= ti2
-        if ti1 > tmayor | ti2 < tmenor
-            prob = 0;
-        else
-            prob = normcdf(ti1, media, desv) - normcdf(ti2, media, desv);
-        end
+        prob = normcdf(ti1, media, desv) - normcdf(ti2, media, desv);
     else
-        if ti1 < tmenor | ti2 > tmayor
-            prob = 0;
-        else
-            prob = normcdf(ti2, media, desv) - normcdf(ti1, media, desv);
-        end
+        prob = normcdf(ti2, media, desv) - normcdf(ti1, media, desv);
+    end
+    if ti1 > tmayor & ti2 > tmayor | ti1 < tmenor & ti2 < tmenor
+        prob = 0;
     end
     if prob <= 0
         prob = 0;
     end
-   
+    
     salto_linea();
     impr = ['Probabilidad: ', num2str(prob)];
     disp(impr);
@@ -652,3 +647,17 @@ En este estado, tecleamos el número que se corresponda con la opción que quere
 
 En el caso de las opciones 2, 4 y 5 se imprimirá un submenú o en ocasiones hasta dos ofreciendo al usuario. Se procede a mostrarlos:
 * **Submenú opción *2) Datos Numéricos*:**
+```
+Eliga la acción a realizar:
+ 
+1) Media
+2) Mediana
+3) Desviación Típica
+Introduzca un numero:
+```
+En este punto, el usuario ha de introducir un número dependiendo del cálculo que quiera hacer. Tras esto, se le preguntará sobre la categoría a la que quiere aplicar dicho cálculo de la siguiente manera:
+
+Supongamos que hemos elegido la opción *3) Desviación Típica*
+```
+
+```
