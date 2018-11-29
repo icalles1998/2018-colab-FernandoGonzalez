@@ -59,7 +59,7 @@ function [n] = leernum();
     n = input('Introduzca un numero: ');
 end
 ```
-Una vez leído el número introducido por el usuario, el programa entra en una casuística encargada de decidir qué hacer en función de dicho número. A continuación separaré esta casuística por "procedimientos" con el fín del buen entendimiento del código que a partir de este momento se explica:
+Una vez leído el número introducido por el usuario, el programa entra en una casuística encargada de decidir qué hacer en función de dicho número. A continuación separaré esta casuística por "procedimientos" con el fin del buen entendimiento del código que a partir de este momento se explica:
 ```
     if n == 1
         procedimiento_1;
