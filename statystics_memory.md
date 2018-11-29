@@ -682,3 +682,24 @@ Y tras haber introducido el tiempo deseado, se imprimirá algo como:
 ```
 Probabilidad: 0.48469
 ```
+* **Submenú Opción *5) Cálculo de Cuartiles*:**
+```
+1) Cálculo de Cuartiles
+2) Cálculo de Percentiles
+```
+**1.** Suponiendo que elegimos la opción 1, la salida será algo como:
+```
+Primer Cuartil: 0:51:46
+Segundo Cuartil: 0:59:13
+Tercer Cuartil: 1:8:15
+```
+**2.** Suponiendo que elegimos la opción 2, se imprimirá por pantalla un nuevo submenú como el siguiente:
+```
+Introduzca el número de percentil que desea:
+```
+Y tras introducir el número (para el ejemplo se ha introducido 21), la salida será como la descrita a continuación:
+```
+Percentil 21: 0:50:25
+```
+
+**NOTA:** Cualquier número introducido que no conste entre las opciones dadas por cualquiera de los menús y/o submenús probocará un aviso de error pero el programa continuará su ejecución.
