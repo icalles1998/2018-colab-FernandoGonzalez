@@ -80,7 +80,7 @@ Una vez leído el número introducido por el usuario, el programa entra en una c
 En cuanto al caso 'n == 6', decir que se corresponde con la salida del programa. La asignación del valor booleano 'true' a la variable 'finish' significaría la salida del bucle y, por tanto, el fin de la ejecución del programa. En lo que al caso por defecto se refiere, decir que se imprime un mensaje de error indicando el correcto uso del programa con la sentencia
 
 ``disp("Teclee un número del 1 al 6");``.
-Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente idicados.
+Llegados a este punto, procedo a comentar el funcionamiento de cada uno de los "procedimientos" anteriormente indicados.
 ### procedimiento_1:
 #### Especificación del Código:
 **procedimiento_1** consta de un procedimiento llamado ``hacer_histograma(tiempo)``, el cual imprime por pantalla un histograma teniendo en cuenta todos los tiempos leídos en el fichero excel. A continuación se muestra el código de este procedimiento:
